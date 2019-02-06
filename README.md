@@ -6,11 +6,18 @@
 * Choose EC2 and select Ubuntu with appropriate settings.
 * Click on **Review and Launch** and select **Launch**.
 * Edit and select **Create a new pair** and then download the file with extension '.pem'.
+* Put it in the project folder.
 * Then launch the instance.
 * Give the name for instance and then goto **description** section.
 * In **Inbounds** section, select **Launch-wizaed-2** and add ports for SSH (2200), HTTP (80) and NTP (123) and save.
 
 ### Step 2: Secure server
+* Open gitbash from the project folder and run the following command:
+```
+ssh -i linux_server_31_01_2019.pem ubuntu@3.87.44.0
+```
+Then it will connect to ubuntu user.
+* Then type the following commands for secure the server:
 ```
 sudo apt-get update
 ```
@@ -31,6 +38,7 @@ ssh -i linux_server_06_02_2019.pem -p 2200 ubuntu@3.87.44.0
 ```
 
 ### Step 4: Configure the Uncomplicated Firewall (UFW)
+Use the following commands:
 ```
 * sudo ufw status
 * sudo ufw default deny incoming
@@ -46,7 +54,7 @@ ssh -i linux_server_06_02_2019.pem -p 2200 ubuntu@3.87.44.0
 ```
 sudo ufw status
 ```
-You wii get the result:
+You will get the result:
 ```
 Status: active
 
@@ -264,7 +272,7 @@ sudo a2ensite catalog
 service apache2 reload
 ```
 
-* Seting up the Flask application
+### Seting up the Flask application
 * Create /var/www/catalog/catalog.wsgi file using:
 ```
 sudo vi catalog.wsgi
