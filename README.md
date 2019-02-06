@@ -2,7 +2,7 @@
 
 ## Starting a Server
 ### Step 1: Create a Server on Amazon EC2
-* login to [AWS Account](aws.educate.com)
+* login to [AWS Account](https://aws.amazon.com/education/awseducate/)
 * Choose EC2 and select Ubuntu with appropriate settings.
 * Click on **Review and Launch** and select **Launch**.
 * Edit and select **Create a new pair** and then download the file with extension '.pem'.
@@ -13,6 +13,7 @@
 
 Click [here](https://github.com/Deepak780/Linux-Server-Configuration/blob/master/Private%20Key) for SSH private key
 
+[Top](#top)
 ### Step 2: Secure server
 * Open gitbash from the project folder and run the following command:
 ```
@@ -27,6 +28,7 @@ sudo apt-get update
 sudo apt-get upgrade
 ```
 
+[Top](#top)
 ### Step 3: Change SSH port from 22 to 2200
 * Edit the file: sudo vi /etc/ssh/sshd_config
 Change Port number 22 to 2200
@@ -39,6 +41,7 @@ Save and exit using esc and confirm with :wq
 ssh -i linux_server_06_02_2019.pem -p 2200 ubuntu@3.87.44.0
 ```
 
+[Top](#top)
 ### Step 4: Configure the Uncomplicated Firewall (UFW)
 Use the following commands:
 ```
@@ -72,6 +75,7 @@ To                         Action      From
 22 (v6)                    DENY        Anywhere (v6)
 ```
 
+[Top](#top)
 ### Step 5: Give `grader` access
 * Create a New User account named `grader`
 `sudo adduser grader` and enter password.
@@ -121,6 +125,7 @@ sudo dpkg-reconfigure tzdata
 ```
 Choose time zone UTC
 
+[Top](#top)
 ### Instaling Apache
 1. Now install apache software as grader.
 ```
@@ -138,6 +143,8 @@ Step 4. Install some libraries of python development:
 ```
 sudo apt-get install libpq-dev python-dev	
 ```
+
+[Top](#top)
 ### Install and configure PostgreSQL:
 1. Install postgresql as:
 ```
@@ -174,6 +181,7 @@ GRANT ALL ON SCHEMA public TO catalog;
 ```
 9. then exit using `exit` command.
 
+[Top](#top)
 ### Setting up Google Oauth2 Credentials
 * Login to console.developers.google.com and select a new project and name it as catalog.
 * Goto credentials  and edit OAuth details(Configuration) as follows:
@@ -191,6 +199,7 @@ http://ip.xip.io/callback
 xip.io is a free DNS which will be the same as using IP address
 * After download the client secrets file.
 
+[Top](#top)
 ### Installing Git:
 Login as grader and install git using the command:
 ```
@@ -219,6 +228,7 @@ as
 engine = create_engine('postgresql://catalog:catalog@localhost/catalog')
 ```
 
+[Top](#top)
 ### Installing the virtual environment
 * From /var/www/catalog/catalog directory install `pip`: 
 ```
@@ -237,6 +247,7 @@ sudo virtualenv -p python3 venv3.
 sudo chown -R grader:grader venv3/.
 ```
 
+[Top](#top)
 ### Configure and Enabling New Virtual Host
 * Configure by typing the following command:
 ```
@@ -274,6 +285,7 @@ sudo a2ensite catalog
 service apache2 reload
 ```
 
+[Top](#top)
 ### Seting up the Flask application
 * Create /var/www/catalog/catalog.wsgi file using:
 ```
@@ -295,8 +307,8 @@ sudo service apache2 restart.
 
 From the /var/www/catalog/catalog/ directory
 
-### Activate the virtual environment and installing dependencies: 
-* Activate virtual environment using the command:
+### Activate the virtual environment and installing dependencies
+* Activate virtual environment, From the /var/www/catalog/catalog/ directory type the command:
 ```
 . venv3/bin/activate
 ```
