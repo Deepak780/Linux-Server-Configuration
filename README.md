@@ -101,11 +101,13 @@ chmod 0700 /home/grader/.ssh/, for authorized_keys chmod 644 authorized_keys
 if PermitRootLogin is set to No
 9.Restart SSH: `sudo service ssh restart`
 10. Check whether grader account is Working or not by RUNNING the command
-```ssh -i linux_31.pem -p 2200 grader@3.87.44.0
+```
+ssh -i linux_31.pem -p 2200 grader@3.87.44.0
 ```
 #### Configure the local timezone to UTC Logged On grader Account
 TIME ZONE: 
-```sudo dpkg-reconfigure tzdata
+```
+sudo dpkg-reconfigure tzdata
 ```
 Choose time zone UTC
 
@@ -166,7 +168,8 @@ GRANT ALL ON SCHEMA public TO catalog;
 * Login to console.developers.google.com and select a new project and name it as catalog.
 * Goto credentials  and edit OAuth details(Configuration) as follows:
 Javascript origin 
-```http://ip.xip.io 
+```
+http://ip.xip.io 
 ```
 
 redirect URI:
@@ -198,7 +201,8 @@ sudo chown -R grader:grader catalog/
 mv item_catalog.py __init__.py
 ```
 * Edit the following line in all the three files __init.py, my_database.py, sample_data.py
-```engine = create_engine("sqlite:///GadgetDB.db") 
+```
+engine = create_engine("sqlite:///GadgetDB.db") 
 ```
 as
 ```
