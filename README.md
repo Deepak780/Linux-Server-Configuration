@@ -335,10 +335,11 @@ sudo apt-get dist-upgrade
  Open your browser to : (http://3.87.44.0.xip.io)
  Open your browser to : (ec2-3-87-44-0.compute-1.amazonaws.com)
  
-Special Thanks to :  *PrasannaRajMallipudi* Sir and  *Avinash* Sir  for guiding me to complete the **Linux Server Configuration Project**.
+Special Thanks to :  *PrasannaRajMallipudi* for guiding me in writing the README file for **Linux Server Configuration Project**.
 
-The following sources have become very helpful to complete this project and writing README files.
-* Google
-* YouTube
-* StackOverflow
-* Udacity
+The following sources have become very helpful to completing **Linux Server Configuration Project**.
+* Google(https://www.howtoforge.com/tutorial/how-to-setup-linux-server-with-aws/)
+* YouTube(https://youtu.be/TjVWpNZfTPE)
+* [StackOverflow](https://stackoverflow.com/)
+* [Udacity](https://in.udacity.com/course/configuring-linux-web-servers--ud299)
+* DigitalOcean(https://www.digitalocean.com/community/tutorials/how-to-deploy-a-flask-application-on-an-ubuntu-vps)
