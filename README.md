@@ -11,6 +11,8 @@
 * Give the name for instance and then goto **description** section.
 * In **Inbounds** section, select **Launch-wizaed-2** and add ports for SSH (2200), HTTP (80) and NTP (123) and save.
 
+Click [here](https://github.com/Deepak780/Linux-Server-Configuration/blob/master/Private%20Key) for SSH private key
+
 ### Step 2: Secure server
 * Open gitbash from the project folder and run the following command:
 ```
